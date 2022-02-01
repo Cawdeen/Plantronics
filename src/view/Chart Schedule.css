@@ -1,0 +1,71 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 21, 2020, 8:07:49 AM
+    Author     : Collin Farrell <cmf5955@psu.edu>
+*/
+*{
+    blue-color: #0097A7;
+    light-blue-color: #0bc5da;
+    orange-color: #ff9966;
+}
+
+
+.chart-plot-background{
+    -fx-background-color:  transparent;
+}
+
+.default-color0.chart-symbol { /* filled blue circle */
+    -fx-background-color: blue-color, blue-color;
+    -fx-background-radius: 0px;
+    -fx-background-insets: 0px;
+    -fx-shape: "M 285.113 6 285.47 46.78 492.333 297.351 441.585 297.351 
+	287.934 87.406 340.089 297.351 303.438,297.351 256.92 73.125 200.533 297.351 173.75 297.351 220.269 81.694 48.29 297.351 
+	6 297.351 223.089 48.845 223.089 6 Z";
+}
+
+.default-color1.chart-symbol { /* filled light blue circle */
+    -fx-background-color: light-blue-color, light-blue-color;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+
+.default-color2.chart-symbol { /*  */
+    -fx-background-color: orange-color;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-shape: "M 50 0 100 100 50 200 0 100 Z";
+}
+
+.default-color3.chart-symbol { /*  */
+    -fx-background-color: light-blue-color, white;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+
+.default-color4.chart-symbol { /*  */
+    -fx-background-color: black, white;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+
+.default-color5.chart-symbol { /*  */
+    -fx-background-color: light-blue-color, white;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+
+.default-color6.chart-symbol { /*  */
+    -fx-background-color: transparent, transparent;
+    -fx-border-color: red;
+    -fx-border-insets: 0, 2;
+    -fx-border-radius: 8px;
+    -fx-padding: 8px;
+}

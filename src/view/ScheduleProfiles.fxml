@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" styleClass="panel-anchor" stylesheets="@TouchScreen1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ScheduleProfilesController">
+   <children>
+      <Button fx:id="backArrow" layoutY="16.0" mnemonicParsing="false" onAction="#handleBackArrowAction" prefHeight="38.0" prefWidth="70.0" styleClass="button2">
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ic_backarrow_grey_48dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text layoutX="326.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Hardware Schedule Profiles" textAlignment="CENTER" wrappingWidth="372.0000098561868" />
+      <AnchorPane layoutX="11.0" layoutY="118.0" minHeight="0.0" minWidth="0.0" prefHeight="415.0" prefWidth="1009.0">
+         <children>
+            <GridPane fx:id="profileListGrid" prefHeight="50.0" prefWidth="699.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <Button fx:id="addProfileButton" layoutX="18.0" layoutY="534.0" mnemonicParsing="false" onAction="#handleAddProfileAction" prefHeight="51.0" prefWidth="72.0" styleClass="button2">
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ic_plus_grey_48dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text layoutX="90.0" layoutY="564.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="settingsRowDetail" text="Add New Season" wrappingWidth="241.13671875" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,60 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 10, 2020, 11:27:37 AM
+    Author     : Collin Farrell <cmf5955@psu.edu>
+*/
+*{
+    dark-primary-color: #0097A7;
+    default-primary-color: #00BCD4;
+    light-primary-color: #B2EBF2;
+    text-primary-color: #FFFFFF;
+    accent-color: #CDDC39;
+    primary-text-color: #212121;
+    secondary-text-color: #757575;
+    divider-color: #BDBDBD;
+    light-textbox-color: #FFFFFF;
+    
+    bar-dark-blue: #0033cc;
+    bar-light-blue: #b3c6ff;
+}
+
+.chart-plot-background{
+    -fx-background-color:  transparent;
+}
+
+.chart-bar {    
+    
+}
+
+.series0.chart-bar{
+    -fx-background-color: bar-dark-blue;
+}
+
+.series1.chart-bar{
+    -fx-background-color: bar-light-blue;
+}
+
+.series0.chart-area{
+    -fx-background-color: bar-dark-blue;
+}
+
+.series1.chart-area{
+    -fx-background-color: bar-light-blue;
+}
+ 
+.default-color0.chart-series-area-line { -fx-stroke: bar-dark-blue; }
+.default-color1.chart-series-area-line { -fx-stroke: bar-dark-blue; }
+ 
+.default-color0.chart-area-symbol { -fx-background-color: bar-dark-blue, bar-dark-blue; }
+.default-color1.chart-area-symbol { -fx-background-color: bar-dark-blue, bar-light-blue; }
+
+.default-color0.chart-series-area-fill { 
+    -fx-fill: rgb(179,198,255,.8);
+}
+.default-color1.chart-series-area-fill { 
+    -fx-fill: rgb(75,103,195,.5);
+}

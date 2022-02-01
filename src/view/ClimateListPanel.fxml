@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" styleClass="panel-anchor" stylesheets="@TouchScreen1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ClimateListPanelController">
+   <children>
+      <Button fx:id="backArrow" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleBackArrowAction" prefHeight="38.0" prefWidth="70.0" styleClass="button2">
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ic_backarrow_grey_48dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text layoutX="326.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Climate Profiles" textAlignment="CENTER" wrappingWidth="372.0000098561868" />
+      <AnchorPane layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="1024.0" styleClass="panel-anchor" stylesheets="@TouchScreen1.css">
+         <children>
+            <GridPane layoutX="14.0" layoutY="19.0" prefHeight="30.0" prefWidth="987.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="368.0" minWidth="0.0" prefWidth="288.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="416.0" minWidth="10.0" prefWidth="322.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="416.0" minWidth="0.0" prefWidth="62.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Text fx:id="climateName" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="settingsRowTitle" text="Climate Profile Name" wrappingWidth="225.962890625" />
+                  <Text fx:id="climateSeasonNum" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="settingsRowDetail" text="Number of Seasons" wrappingWidth="157.962890625" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+            <ScrollPane fx:id="scrollPane" layoutY="54.0" prefHeight="415.0" prefWidth="1015.0" styleClass="panel-anchor">
+               <content>
+                  <Accordion fx:id="accordion" styleClass="panel-anchor" />
+               </content>
+            </ScrollPane>
+            <Button fx:id="createClimate" layoutX="14.0" layoutY="474.0" mnemonicParsing="false" onAction="#handleCreateClimateAction" prefHeight="51.0" prefWidth="72.0" styleClass="button2">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@ic_plus_grey_48dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Text layoutX="95.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="settingsRowDetail" text="Create New Climate" wrappingWidth="241.13671875" />
+            <Separator layoutX="3.0" layoutY="42.0" prefHeight="15.0" prefWidth="1015.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" styleClass="panel-anchor" stylesheets="@TouchScreen1.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SensorModuleSettingsController">
+   <children>
+      <Pane layoutX="4.0" layoutY="71.0" prefHeight="518.0" prefWidth="1015.0" styleClass="panel-anchor">
+         <children>
+            <Text fx:id="failedPackets" layoutX="227.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="110.13671875" />
+            <Text layoutX="49.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Failed Packets:" wrappingWidth="153.00000494718552" />
+            <Text layoutX="49.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Last Serial Packet:" wrappingWidth="153.00000494718552" />
+            <Text fx:id="lastPacket" layoutX="227.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="235.13671875" />
+            <Text layoutX="49.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Last Successful Packet:" wrappingWidth="153.00000494718552" />
+            <Text fx:id="lastGoodPacket" layoutX="227.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="235.13671875" />
+            <Text layoutX="49.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Time Since Last Success:" wrappingWidth="153.00000494718552" />
+            <Text fx:id="timeSinceLastGood" layoutX="227.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="235.13671875" />
+         </children></Pane>
+      <Button fx:id="backArrow" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleBackArrowAction" prefHeight="38.0" prefWidth="70.0" styleClass="button2">
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ic_backarrow_grey_48dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text layoutX="325.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Sensor Module Output" textAlignment="CENTER" wrappingWidth="372.0000098561868" />
+   </children>
+</AnchorPane>

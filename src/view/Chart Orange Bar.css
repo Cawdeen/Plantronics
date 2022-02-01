@@ -1,0 +1,49 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 10, 2020, 11:27:37 AM
+    Author     : Collin Farrell <cmf5955@psu.edu>
+*/
+
+*{
+    dark-primary-color: #0097A7;
+    default-primary-color: #00BCD4;
+    light-primary-color: #B2EBF2;
+    text-primary-color: #FFFFFF;
+    accent-color: #CDDC39;
+    primary-text-color: #212121;
+    secondary-text-color: #757575;
+    divider-color: #BDBDBD;
+    light-textbox-color: #FFFFFF;
+    
+    bar-dark-blue: #0033cc;
+    bar-light-blue: #b3c6ff;
+    bar-orange: #ffd480;
+}
+
+.chart-plot-background{
+    -fx-background-color:  transparent;
+}
+
+.chart-bar {    
+    
+}
+
+.series0.chart-bar{
+    -fx-background-color: bar-orange;
+}
+
+.series1.chart-bar{
+    -fx-background-color: bar-light-blue;
+}
+ 
+.default-color0.chart-series-line { -fx-stroke: #e9967a; }
+.default-color1.chart-series-line { -fx-stroke: #f0e68c; }
+.default-color2.chart-series-line { -fx-stroke: #dda0dd; }
+ 
+.default-color0.chart-line-symbol { -fx-background-color: #e9967a, white; }
+.default-color1.chart-line-symbol { -fx-background-color: #f0e68c, white; }
+.default-color2.chart-line-symbol { -fx-background-color: #dda0dd, white; }

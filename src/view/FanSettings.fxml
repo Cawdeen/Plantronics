@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" styleClass="panel-anchor" stylesheets="@TouchScreen1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FanSettingsController">
+   <children>
+      <Pane layoutX="4.0" layoutY="71.0" prefHeight="522.0" prefWidth="1014.0" styleClass="panel-anchor">
+         <children>
+            <Pane layoutX="3.0" layoutY="2.0" prefHeight="402.0" prefWidth="488.0" styleClass="panel-anchor">
+               <children>
+                  <Pane layoutX="5.0" layoutY="8.0" prefHeight="161.0" prefWidth="470.0">
+                     <children>
+                        <ToggleButton fx:id="circFanToggle" layoutX="400.0" layoutY="42.0" mnemonicParsing="false" onAction="#circFanToggleAction" prefHeight="27.0" prefWidth="45.0" text="Off" />
+                        <GridPane layoutX="4.0" layoutY="36.0" prefHeight="38.0" prefWidth="132.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="circSpeedConst" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" />
+                              <Button fx:id="circStrengthConstDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#circStrengthConstDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <Button fx:id="circStrengthConstUp" mnemonicParsing="false" onAction="#circStrengthConstUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                           </children>
+                        </GridPane>
+                        <Text layoutX="4.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle" text="Circulation Fan" wrappingWidth="219.19239139556885" />
+                        <GridPane layoutX="4.0" layoutY="95.0" prefHeight="38.0" prefWidth="132.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="circSpeedMax" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" />
+                              <Button fx:id="circStrengthMaxDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#circStrengthMaxDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <Button fx:id="circStrengthMaxUp" mnemonicParsing="false" onAction="#circStrengthMaxUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                           </children>
+                        </GridPane>
+                        <Text layoutX="152.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Constant fan speed between schedule tasks." wrappingWidth="204.73046588897705" />
+                        <Text layoutX="4.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Maximum Fan Speed (0-100)" wrappingWidth="148.1923806667328" />
+                        <Text layoutX="4.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Constant Fan Speed (0-100)" wrappingWidth="148.1923806667328" />
+                        <Text layoutX="152.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Maximum speed for scheduled tasks." wrappingWidth="204.73046875" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="5.0" layoutY="169.0" prefHeight="161.0" prefWidth="470.0">
+                     <children>
+                        <ToggleButton fx:id="ventFanToggle" layoutX="400.0" layoutY="42.0" mnemonicParsing="false" onAction="#ventFanToggleAction" prefHeight="27.0" prefWidth="45.0" text="Off" />
+                        <GridPane layoutX="4.0" layoutY="36.0" prefHeight="38.0" prefWidth="132.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="ventSpeedConst" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" />
+                              <Button fx:id="ventSpeedConstDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ventSpeedConstDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <Button fx:id="ventSpeedConstUp" mnemonicParsing="false" onAction="#ventSpeedConstUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                           </children>
+                        </GridPane>
+                        <Text layoutX="4.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle" text="Ventilation Fan" wrappingWidth="219.19239139556885" />
+                        <GridPane layoutX="4.0" layoutY="95.0" prefHeight="38.0" prefWidth="132.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="ventSpeedMax" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" />
+                              <Button fx:id="ventSpeedMaxDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ventSpeedMaxDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <Button fx:id="ventSpeedMaxUp" mnemonicParsing="false" onAction="#ventSpeedMaxUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                           </children>
+                        </GridPane>
+                        <Text layoutX="152.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Constant fan speed between schedule tasks." wrappingWidth="219.1923828125" />
+                        <Text layoutX="4.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Maximum Fan Speed (0-100)" wrappingWidth="148.1923806667328" />
+                        <Text layoutX="4.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Constant Fan Speed (0-100)" wrappingWidth="148.1923806667328" />
+                        <Text layoutX="152.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Maximum speed for scheduled tasks." wrappingWidth="204.73046875" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutX="521.0" layoutY="2.0" prefHeight="402.0" prefWidth="488.0" styleClass="panel-anchor">
+               <children>
+                  <Pane layoutX="5.0" layoutY="8.0" prefHeight="161.0" prefWidth="470.0">
+                     <children>
+                        <GridPane layoutX="4.0" layoutY="36.0" prefHeight="38.0" prefWidth="132.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="wSpeedMin" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" />
+                              <Button fx:id="wMinDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#wMinDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <Button fx:id="wMinUp" mnemonicParsing="false" onAction="#wMinUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                           </children>
+                        </GridPane>
+                        <Text layoutX="4.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle" text="White Channel Cooling Fan" wrappingWidth="219.19239139556885" />
+                        <GridPane layoutX="4.0" layoutY="95.0" prefHeight="38.0" prefWidth="132.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="wSpeedMax" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" />
+                              <Button fx:id="wMinDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#wMaxDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <Button fx:id="wMaxUp" mnemonicParsing="false" onAction="#wMaxUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                           </children>
+                        </GridPane>
+                        <Text layoutX="152.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Cutoff speed. Fans will shut off when lights are below this level." wrappingWidth="309.99999833106995" />
+                        <Text layoutX="4.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Maximum Fan Speed (0-100)" wrappingWidth="148.1923806667328" />
+                        <Text layoutX="4.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Minimum Fan Speed (0-100)" wrappingWidth="148.1923806667328" />
+                        <Text layoutX="152.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Maximum speed. The speed when lights are at full brightness." wrappingWidth="310.0" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="5.0" layoutY="169.0" prefHeight="161.0" prefWidth="470.0">
+                     <children>
+                        <GridPane layoutX="4.0" layoutY="36.0" prefHeight="38.0" prefWidth="132.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="rgbSpeedMin" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" />
+                              <Button fx:id="rgbMinDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#rgbMinDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <Button fx:id="rgbMinUp" mnemonicParsing="false" onAction="#rgbMinUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                           </children>
+                        </GridPane>
+                        <Text layoutX="4.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle" text="RGB Channel Cooling Fan" wrappingWidth="219.19239139556885" />
+                        <GridPane layoutX="4.0" layoutY="95.0" prefHeight="38.0" prefWidth="132.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="rgbSpeedMax" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" />
+                              <Button fx:id="rgbMaxDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#rgbMaxDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <Button fx:id="rgbMaxUp" mnemonicParsing="false" onAction="#rgbMaxUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                           </children>
+                        </GridPane>
+                        <Text layoutX="152.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Cutoff speed. Fans will shut off when lights are below this level." wrappingWidth="310.0" />
+                        <Text layoutX="4.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Maximum Fan Speed (0-100)" wrappingWidth="148.1923806667328" />
+                        <Text layoutX="4.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Minimum Fan Speed (0-100)" wrappingWidth="148.1923806667328" />
+                        <Text layoutX="152.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Maximum speed. The speed when lights are at full brightness." wrappingWidth="310.0" />
+                        <Text layoutX="4.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Note: RGB fan strenghts are determined byt taking the average of the three light channel strengths." wrappingWidth="322.00000834465027" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <ToggleButton fx:id="configMode" layoutX="14.0" layoutY="481.0" mnemonicParsing="false" onAction="#handleConfigModeAction" text="Configuration Mode" />
+            <Text layoutX="148.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left" text="Activate Configuration Mode to see changes for different weather conditions. " wrappingWidth="175.00000834465027" />
+            <Separator layoutX="502.0" layoutY="24.0" orientation="VERTICAL" prefHeight="371.0" prefWidth="7.0" />
+         </children>
+      </Pane>
+      <Button fx:id="backArrow" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleBackArrowAction" prefHeight="38.0" prefWidth="70.0" styleClass="button2">
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ic_backarrow_grey_48dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text layoutX="174.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Fan Settings" textAlignment="CENTER" wrappingWidth="372.0000098561868" />
+   </children>
+</AnchorPane>

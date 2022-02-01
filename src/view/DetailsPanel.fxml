@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" styleClass="panel-anchor" stylesheets="@TouchScreen1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DetailsPanelController">
+   <children>
+      <Pane layoutX="6.0" layoutY="6.0" prefHeight="540.0" prefWidth="1011.0" styleClass="panel-anchor">
+         <children>
+            <Pane layoutX="-4.0" prefHeight="540.0" prefWidth="495.0" styleClass="textpanel">
+               <children>
+                  <Pane layoutX="16.0" layoutY="244.0" prefHeight="146.0" prefWidth="166.0">
+                     <children>
+                        <Text fx:id="maxTemp" layoutX="101.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="0" wrappingWidth="57.13671317696571" />
+                        <Text fx:id="minTemp" layoutX="101.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="0" wrappingWidth="57.13671317696571" />
+                        <Text layoutX="-5.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle" text="Set Temperature" textAlignment="CENTER" wrappingWidth="175.00000250339508" />
+                        <Text layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Minimum:" wrappingWidth="112.00000047683716" />
+                        <Text layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Maximum:" wrappingWidth="112.00000205636024" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="190.0" layoutY="244.0" prefHeight="146.0" prefWidth="159.0">
+                     <children>
+                        <Text layoutX="-8.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle" text="Set Humidity" textAlignment="CENTER" wrappingWidth="175.00001192092896" />
+                        <Text fx:id="maxHum" layoutX="101.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="0" wrappingWidth="57.13671317696571" />
+                        <Text fx:id="minHum" layoutX="101.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="0" wrappingWidth="57.13671317696571" />
+                        <Text layoutX="11.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Minimum:" wrappingWidth="97.000000923872" />
+                        <Text layoutX="10.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Maximum:" wrappingWidth="99.99999511241913" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="8.0" layoutY="96.0" prefHeight="146.0" prefWidth="475.0" styleClass="textpanel">
+                     <children>
+                        <Text fx:id="seasonLength" layoutX="171.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="NA" wrappingWidth="174.99998259544373" />
+                        <Text fx:id="dayLength" layoutX="171.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="NA" wrappingWidth="174.99998259544373" />
+                        <Text fx:id="timeToNextSeason" layoutX="171.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="NA" wrappingWidth="175.00001800060272" />
+                        <Text layoutX="8.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Season Length:" wrappingWidth="166.00000494718552" />
+                        <Text layoutX="8.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Next Season In:" wrappingWidth="166.00000494718552" />
+                        <Text layoutX="8.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Day Length:" wrappingWidth="166.00000494718552" />
+                        <Separator layoutX="14.0" layoutY="144.0" prefHeight="5.0" prefWidth="453.0" />
+                        <Separator layoutX="8.0" layoutY="-7.0" prefHeight="5.0" prefWidth="453.0" />
+                     </children>
+                  </Pane>
+                  <Text layoutX="15.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle" text="Current Season:" wrappingWidth="166.00000494718552" />
+                  <Text fx:id="currentSeason" layoutX="131.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="settingsRowTitle" text="NA" wrappingWidth="174.99998259544373" />
+                  <Text layoutX="14.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Failed data packets from sensor module:" wrappingWidth="281.00002613663673" />
+                  <Text fx:id="failedPackets" layoutX="284.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="0" wrappingWidth="57.13671317696571" />
+               </children>
+            </Pane>
+            <Pane layoutX="509.0" prefHeight="540.0" prefWidth="495.0" styleClass="textpanel">
+               <children>
+                  <Separator layoutX="-8.0" layoutY="71.0" orientation="VERTICAL" prefHeight="312.0" prefWidth="5.0" />
+                  <TabPane fx:id="tabPane" layoutY="56.0" prefHeight="470.0" prefWidth="495.0" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab fx:id="graphPane" text=" Temp /Humidity ">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="495.0">
+                                       <children>
+                                          <BarChart fx:id="chartTemp" animated="false" horizontalGridLinesVisible="false" layoutY="12.0" prefHeight="215.0" prefWidth="495.0" stylesheets="@Chart%20Blue%20Bar.css" verticalGridLinesVisible="false">
+                                             <xAxis>
+                                                <CategoryAxis animated="false" side="BOTTOM" fx:id="xTemp" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis fx:id="yTemp" autoRanging="false" label="Temperature" minorTickCount="10" prefHeight="106.0" prefWidth="45.0" side="LEFT" tickLabelGap="10.0" tickLength="3.0" />
+                                             </yAxis>
+                                          </BarChart>
+                                          <AreaChart fx:id="chartHumid" animated="false" layoutY="221.0" prefHeight="215.0" prefWidth="495.0" stylesheets="@Chart%20Blue%20Bar.css">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis label="Humidity" side="LEFT" />
+                                            </yAxis>
+                                          </AreaChart>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text=" Daylight / Rainfall ">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="328.0" prefWidth="348.0">
+                                 <children>
+                                    <Pane layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="495.0">
+                                       <children>
+                                          <BarChart fx:id="chartDaylight" horizontalGridLinesVisible="false" layoutX="2.0" layoutY="2.0" prefHeight="215.0" prefWidth="495.0" stylesheets="@Chart%20Orange%20Bar.css" verticalGridLinesVisible="false">
+                                             <xAxis>
+                                                <CategoryAxis animated="false" label="Month" side="BOTTOM" fx:id="x1" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis fx:id="y1" label="Hours" minorTickLength="3.0" side="LEFT" tickLabelGap="10.0" tickLength="3.0" upperBound="18.0" />
+                                             </yAxis>
+                                          </BarChart>
+                                          <BarChart fx:id="chartRain" horizontalGridLinesVisible="false" layoutY="222.0" prefHeight="215.0" prefWidth="495.0" stylesheets="@Chart%20Blue%20Bar.css" verticalGridLinesVisible="false">
+                                             <xAxis>
+                                                <CategoryAxis animated="false" label="Month" side="BOTTOM" fx:id="xTemp11" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis fx:id="yTemp11" autoRanging="false" label="Rain Days" minorTickCount="10" side="LEFT" tickLabelGap="10.0" tickLength="3.0" upperBound="31.0" />
+                                             </yAxis>
+                                          </BarChart>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </Pane>
+            <Text layoutX="317.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Current Season Details" textAlignment="CENTER" wrappingWidth="361.9999950528145" />
+         </children>
+      </Pane>
+      <GridPane layoutY="549.0" prefHeight="51.0" prefWidth="1024.0" styleClass="panel-icon">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fx:id="homeImageOn" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ic_home_grey_48dp.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="detailsImageOff" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@ic_description_white_48dp.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="settingsImageOff" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+               <image>
+                  <Image url="@ic_settings_grey_48dp.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="homePanelButton" mnemonicParsing="false" onAction="#handleHomePanelButtonAction" prefHeight="44.0" prefWidth="80.0" styleClass="button_placeholder" />
+            <Button fx:id="settingsMenuPanelButton" mnemonicParsing="false" onAction="#handleSettingsMenuPanelButtonAction" prefHeight="44.0" prefWidth="80.0" styleClass="button_placeholder" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+   </children>
+</Pane>

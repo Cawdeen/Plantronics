@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" styleClass="panel-anchor" stylesheets="@../src/view/TouchScreen1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DetailsPanelController">
+   <children>
+      <Pane layoutX="6.0" layoutY="6.0" prefHeight="470.0" prefWidth="703.0" styleClass="panel-anchor">
+         <children>
+            <Text layoutX="158.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="System Status" textAlignment="CENTER" wrappingWidth="372.0000098561868" />
+            <Pane layoutX="364.0" layoutY="60.0" prefHeight="396.0" prefWidth="332.0" styleClass="textpanel">
+               <children>
+                  <GridPane layoutX="14.0" layoutY="80.0" prefHeight="72.0" prefWidth="191.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="66.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="123.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text fx:id="currentDateText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="NA" wrappingWidth="97.0" GridPane.columnIndex="1" />
+                        <Text fx:id="currentTimeText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="NA" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Time:" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Date:" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="204.0" layoutY="79.0" prefHeight="72.0" prefWidth="131.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="96.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="42.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Text fx:id="currentTempText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="NA" wrappingWidth="52.716796875" GridPane.columnIndex="1" />
+                        <Text fx:id="currentHumidityText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="NA" wrappingWidth="112.716796875" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Temp:" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Humidity:" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="14.0" layoutY="251.0" prefHeight="116.0" prefWidth="310.0" styleClass="textpanel">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="80.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="102.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="95.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="43.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text fx:id="heatingStatus" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="OFF" wrappingWidth="74.55859375" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Text fx:id="coolingStatus" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="OFF" wrappingWidth="70.55859375" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Text fx:id="circulationStatus" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="OFF" wrappingWidth="64.55859375" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Text fx:id="ventilationStatus" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="OFF" wrappingWidth="67.55859375" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Heating:" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Cooling:" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Circulation" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Ventilation:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Misting:" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Fog:" GridPane.columnIndex="2" />
+                        <Text fx:id="fogStatus" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="OFF" wrappingWidth="64.55859375" GridPane.columnIndex="3" />
+                        <Text fx:id="mistStatus" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="OFF" wrappingWidth="64.55859375" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+                  <Separator layoutX="-19.0" layoutY="58.0" orientation="VERTICAL" prefHeight="325.0" prefWidth="4.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="60.0" prefHeight="396.0" prefWidth="332.0" styleClass="textpanel">
+               <children>
+                  <GridPane layoutX="14.0" layoutY="80.0" prefHeight="72.0" prefWidth="191.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="66.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="123.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Text fx:id="currentDateText1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="NA" wrappingWidth="97.0" GridPane.columnIndex="1" />
+                        <Text fx:id="currentTimeText1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="NA" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Time:" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Date:" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="204.0" layoutY="79.0" prefHeight="72.0" prefWidth="131.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="96.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="42.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Text fx:id="currentTempText1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="NA" wrappingWidth="52.716796875" GridPane.columnIndex="1" />
+                        <Text fx:id="currentHumidityText1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="NA" wrappingWidth="112.716796875" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Temp:" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Humidity:" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="14.0" layoutY="251.0" prefHeight="116.0" prefWidth="310.0" styleClass="textpanel">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="105.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="71.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="95.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="43.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Text fx:id="heatingStatus1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="OFF" wrappingWidth="74.55859375" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Text fx:id="coolingStatus1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="OFF" wrappingWidth="70.55859375" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Text fx:id="humidifierStatus1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="OFF" wrappingWidth="64.55859375" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Text fx:id="ventilationStatus1" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="OFF" wrappingWidth="67.55859375" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="White" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Red" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Green" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Blue" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="secondarytext" text="Daylight:" />
+                        <Text fx:id="lightStatus" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="OFF" wrappingWidth="69.55859375" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Button fx:id="backArrow" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleBackArrowAction" prefHeight="38.0" prefWidth="70.0" styleClass="button2">
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../EnvCntr8/src/view/ic_backarrow_grey_48dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</Pane>

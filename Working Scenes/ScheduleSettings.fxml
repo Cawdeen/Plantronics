@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" styleClass="panel-anchor" stylesheets="@../src/view/TouchScreen1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="30.0" layoutY="189.0" prefHeight="258.0" prefWidth="326.0">
+         <children>
+            <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle" text="Hardware" wrappingWidth="210.70311641693115" />
+            <Pane layoutX="3.0" layoutY="29.0" prefHeight="228.0" prefWidth="321.0">
+               <children>
+                  <GridPane layoutX="10.0" layoutY="28.0" prefHeight="190.0" prefWidth="181.0">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="129.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="186.0" minWidth="0.0" prefWidth="52.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Mist" wrappingWidth="81.70311641693115" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Fog" wrappingWidth="84.70311641693115" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="radialHWFog" mnemonicParsing="false" onAction="#handleRadioHWFogAction" prefHeight="17.0" prefWidth="14.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <RadioButton fx:id="radialHWMist" mnemonicParsing="false" onAction="#handleRadioHWMistAction" prefHeight="17.0" prefWidth="14.0" GridPane.columnIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Heat" wrappingWidth="84.70311641693115" GridPane.rowIndex="2" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Cooling" wrappingWidth="84.70311641693115" GridPane.rowIndex="3" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Circulation" wrappingWidth="84.70311641693115" GridPane.rowIndex="4" />
+                        <RadioButton fx:id="radialHWHeat" mnemonicParsing="false" onAction="#handleRadioHWHeatAction" prefHeight="17.0" prefWidth="14.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <RadioButton fx:id="radialHWCool" mnemonicParsing="false" onAction="#handleRadioHWCoolAction" prefHeight="17.0" prefWidth="14.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <RadioButton fx:id="radialHWCirc" mnemonicParsing="false" onAction="#handleRadioHWCircAction" prefHeight="17.0" prefWidth="14.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Ventilation" wrappingWidth="84.70311641693115" GridPane.rowIndex="5" />
+                        <RadioButton fx:id="radialHWVent" mnemonicParsing="false" onAction="#handleRadioHWVentAction" prefHeight="17.0" prefWidth="14.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     </children>
+                  </GridPane>
+                  <Text layoutX="10.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="System to Schedule" wrappingWidth="210.70311641693115" />
+                  <Text layoutX="191.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left_small" text="Select which system is currently being scheduled." wrappingWidth="97.99998807907104" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="373.0" layoutY="189.0" prefHeight="167.0" prefWidth="337.0">
+         <children>
+            <Text layoutX="10.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle" text="Time Settings" wrappingWidth="210.70311641693115" />
+            <Pane layoutX="5.0" layoutY="21.0" prefHeight="131.0" prefWidth="327.0">
+               <children>
+                  <Text layoutX="39.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext" text="Hour (0-23)" textAlignment="RIGHT" wrappingWidth="82.46776700019836" />
+                  <Text layoutX="39.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext" text="Minute (0-59)" textAlignment="RIGHT" wrappingWidth="82.4677734375" />
+                  <Text layoutX="10.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Scheduled Start Time" wrappingWidth="173.5078190267086" />
+                  <GridPane layoutX="142.0" layoutY="30.0" prefHeight="34.0" prefWidth="132.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="hwStartHrDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#dayStartHrDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="hwStartHrUp" mnemonicParsing="false" onAction="#dayStartHrUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <TextField fx:id="hwStartHour" onInputMethodTextChanged="#hwStartHourAction" prefHeight="25.0" prefWidth="44.0" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="142.0" layoutY="66.0" prefHeight="34.0" prefWidth="132.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="hwStartMinDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#dayStartMinDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="hwStartMinUp" mnemonicParsing="false" onAction="#dayStartMinUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <TextField fx:id="hwStartMin" onInputMethodTextChanged="#hwStartMinAction" prefHeight="25.0" prefWidth="44.0" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="142.0" layoutY="100.0" prefHeight="38.0" prefWidth="132.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="hwTime" onInputMethodTextChanged="#hwDurAction" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" />
+                        <Button fx:id="hwTimeDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#rCycleDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="hwTimeUp" mnemonicParsing="false" onAction="#rCycleUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                     </children>
+                  </GridPane>
+                  <Text layoutX="-15.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext" text="Duration (seconds)" wrappingWidth="135.70311641693115" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Text layoutX="169.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Scheduled Function Settings" textAlignment="CENTER" wrappingWidth="372.0000098561868" />
+   </children>
+</AnchorPane>

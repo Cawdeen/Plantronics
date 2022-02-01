@@ -1,0 +1,331 @@
+/* 
+    Created on : Nov 27, 2019, 6:36:32 PM
+    Author     : Collin Farrell <cmf5955@psu.edu>
+*/
+*{
+    dark-primary-color: #0097A7;
+    default-primary-color: #00BCD4;
+    light-primary-color: #B2EBF2;
+    text-primary-color: #FFFFFF;
+    accent-color: #CDDC39;
+    primary-text-color: #212121;
+    secondary-text-color: #757575;
+    divider-color: #BDBDBD;
+    light-textbox-color: #FFFFFF;
+    
+    bar-dark-blue: #0033cc;
+    bar-light-blue: #b3c6ff;
+}
+
+.root{
+    -fx-background-color: default-primary-color;
+    -fx-text-fill: text-primary-color;
+}
+
+.panel-anchor{
+    -fx-background-color: text-primary-color;
+    -fx-background-radius: 0;
+    -fx-border-color: primary-text-color;
+    -fx-border-width: 0;
+    -fx-border-radius: 0;
+}
+
+.accordion {
+    -fx-background-color: text-primary-color;
+    -fx-fill: text-primary-color;
+}
+
+.titled-pane 
+{
+-fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";    
+-fx-text-fill: secondary-text-color;
+}
+
+.titled-pane:focused > .title 
+{
+-fx-color: text-primary-color;
+}
+
+.titled-pane > .title 
+{
+-fx-background-color: text-primary-color;
+-fx-font: 16px "Arial";
+-fx-fill: secondary-text-color;
+-fx-background-insets: 0, 1, 2;
+-fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+-fx-border-width: 0 0 1.5 0; 
+-fx-border-color: text-primary-color text-primary-color lightgray text-primary-color;
+-fx-padding: .5em 0em .5em 0.0em; /* 2 10 3 10 */
+}
+
+.titled-pane:collapsed > .title > .arrow-button .arrow 
+{
+-fx-rotate: -90;
+}
+
+.titled-pane > *.content 
+{
+-fx-background-color: text-primary-color;
+-fx-border-color: text-primary-color;
+-fx-background-insets: 0, 0 1 1 1;
+-fx-padding: 0.167em;
+ }
+ 
+ .titled-pane > .title > .arrow-button .arrow 
+{
+-fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+-fx-background-insets: 0 0 0 0, 0;
+-fx-padding: 0em 0em 0em 0em; /* 3 3.75 3 3.75 */
+-fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+
+.tab-pane .tab-header-area .tab-header-background{
+    -fx-background-color: text-primary-color;
+}
+
+.tab-pane .tab{
+    -fx-background-color: text-primary-color;
+}
+
+.tab-pane .tab-label{
+    -fx-font: 16px "Arial";
+    -fx-fill: primary-text-color;
+    -fx-alignment: CENTER;
+}
+
+.tab:selected{
+    -fx-border-color: text-primary-color text-primary-color dark-primary-color text-primary-color;
+}
+
+.tab:selected .tab-label{
+    -fx-font: 16px "Arial";
+    -fx-font-weight: BOLD;
+    -fx-text-fill: dark-primary-color;
+    -fx-fill: accent-color;
+    -fx-alignment: CENTER;
+}
+
+.tab {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.chart-plot-background{
+    -fx-background-color:  transparent;
+}
+
+.chart-bar {    
+    
+}
+
+.series0.chart-bar{
+    -fx-background-color: bar-dark-blue;
+}
+
+.series1.chart-bar{
+    -fx-background-color: bar-light-blue;
+}
+ 
+.default-color0.chart-series-line { -fx-stroke: #e9967a; }
+.default-color1.chart-series-line { -fx-stroke: #f0e68c; }
+.default-color2.chart-series-line { -fx-stroke: #dda0dd; }
+ 
+.default-color0.chart-line-symbol { -fx-background-color: #e9967a, white; }
+.default-color1.chart-line-symbol { -fx-background-color: #f0e68c, white; }
+.default-color2.chart-line-symbol { -fx-background-color: #dda0dd, white; }
+
+.panel{
+    -fx-background-color: text-primary-color;
+    -fx-background-radius: 10;
+    -fx-border-color: primary-text-color;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+}
+
+.scroll-pane {
+    -fx-background-color: text-primary-color;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color: text-primary-color;;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: text-primary-color;;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: text-primary-color;
+    -fx-border-color: primary-text-color;
+    -fx-border-radius: 6;
+    -fx-background-radius: 5em;
+}
+
+.panel-dark{
+    -fx-background-color: dark-primary-color;
+    -fx-background-radius: 10;
+    -fx-border-color: primary-text-color;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+}
+
+.panel-icon{
+    -fx-background-color: primary-text-color;
+    -fx-alignment: CENTER;
+    -fx-halignment: CENTER;
+    -fx-valignment: CENTER;
+}
+
+.status-icon{
+    -fx-halignment: CENTER;
+    -fx-valignment: CENTER;
+}
+
+.textpanel{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.primarytext{
+    -fx-font: 12px "Arial";
+    -fx-fill: primary-text-color;
+    -fx-alignment: CENTER;
+}
+
+.primarytextsmall{
+    -fx-font: 10px "Arial";
+    -fx-fill: primary-text-color;
+    -fx-alignment: CENTER;
+}
+
+.tiptext{
+    -fx-font: 10px "Arial";
+    -fx-font-style: ITALIC;
+    -fx-fill: primary-text-color;
+    -fx-text-alignment: RIGHT;
+}
+
+.tiptext_left{
+    -fx-font: 10px "Arial";
+    -fx-font-style: ITALIC;
+    -fx-fill: primary-text-color;
+    -fx-text-alignment: LEFT;
+}
+
+.tiptext_left_small{
+    -fx-font: 8px "Arial";
+    -fx-font-style: ITALIC;
+    -fx-fill: primary-text-color;
+    -fx-text-alignment: LEFT;
+}
+
+.secondarytext{
+    -fx-font: 14px "Arial";
+    -fx-fill: secondary-text-color;
+    -fx-alignment: CENTER;
+}
+
+.lighttext{
+    -fx-font: 10px "Arial";
+    -fx-fill: text-primary-color;
+    -fx-alignment: CENTER;
+    -fx-background-fills: light-primary-color;
+}
+
+.displayScreen-temp{
+    -fx-font: 60px "Arial";
+    -fx-fill: primary-text-color;
+    -fx-text-alignment: LEFT; 
+}
+.title{
+    -fx-font: 22px "Arial";
+    -fx-fill: dark-primary-color;
+    -fx-alignment: CENTER;
+}
+
+.subtitle{
+    -fx-font: 14px "Arial";
+    -fx-fill: dark-primary-color;
+    -fx-alignment: CENTER;
+}
+
+.settingsRowTitle{
+    -fx-font: 18px "Arial";
+    -fx-fill: primary-text-color;
+    -fx-alignment: CENTER;
+}
+
+.settingsRowDetail{
+    -fx-font: 16px "Arial";
+    -fx-fill: primary-text-color;
+    -fx-alignment: CENTER;
+}
+
+.label{
+    -fx-font: 14px "Arial";
+    -fx-fill: text-primary-color;
+    
+}
+
+.button1{
+    -fx-font: 12px "Arial";
+    -fx-text-fill: primary-text-color;
+    -fx-background-color: light-textbox-color;
+    -fx-padding: 5;
+    -fx-background-radius: 10;
+    -fx-border-color: primary-text-color;
+    -fx-border-radius: 10;
+}
+
+.button2{
+    -fx-font: 12px "Arial";
+    -fx-text-fill: primary-text-color;
+    -fx-background-color: light-textbox-color;
+    -fx-padding: 5;
+    -fx-background-radius: 10;
+}
+
+.toggle-button {
+    -fx-font: 12px "Arial";
+    -fx-text-fill: primary-text-color;
+    -fx-background-color: light-textbox-color;
+    -fx-padding: 5;
+    -fx-background-radius: 10;
+    -fx-border-color: primary-text-color;
+    -fx-border-radius: 10;
+}
+
+.toggle-button:selected {
+    -fx-font: 12px "Arial";
+    -fx-text-fill: light-textbox-color;
+    -fx-background-color: dark-primary-color;
+    -fx-padding: 5;
+    -fx-background-radius: 10;
+    -fx-border-color: primary-text-color;
+    -fx-border-radius: 10;
+}
+
+.button_placeholder{
+     -fx-background-color: rgba(0,0,0,0);
+}
+
+.radio-button .radio {
+    -fx-border-width: 1px;
+    -fx-border-color: #000;
+    -fx-background-color: white;
+    -fx-background-image: null;
+    -fx-border-radius: 10px;
+    -fx-padding: 2px;
+}

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane prefHeight="600.0" prefWidth="1024.0" style="-fx-border-color: GRAY; -fx-background-insets: 3; -fx-border-width: 1;" styleClass="textpanel" stylesheets="@TouchScreen1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SeasonSettingsController">
+   <children>
+      <Pane layoutX="5.0" layoutY="45.0" prefHeight="549.0" prefWidth="1011.0" styleClass="panel-anchor">
+         <children>
+            <ButtonBar layoutX="765.0" layoutY="478.0" prefHeight="57.0" prefWidth="232.0">
+              <buttons>
+                <Button fx:id="closeButton" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="50.0" prefWidth="100.0" styleClass="button1" text="Cancel" />
+                  <Button fx:id="submitButton" layoutX="135.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="50.0" prefWidth="100.0" styleClass="button1" text="Save" />
+              </buttons>
+            </ButtonBar>
+            <Pane layoutX="551.0" layoutY="482.0" prefHeight="50.0" prefWidth="214.0">
+               <children>
+                  <Text fx:id="invalidEntryT" fill="RED" layoutX="7.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invalid entry! Please check inputs." visible="false" wrappingWidth="202.0000001192093">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="544.0" layoutY="14.0" prefHeight="124.0" prefWidth="457.0" styleClass="panel">
+               <children>
+                  <Text layoutX="7.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Rain Days Per Month" wrappingWidth="173.5078190267086" />
+                  <GridPane layoutX="143.0" layoutY="4.0" prefHeight="34.0" prefWidth="132.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="rainDaysDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#rainDaysDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="rainDaysUp" mnemonicParsing="false" onAction="#rainDaysUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <TextField fx:id="rainDays" onAction="#handleSubmitButtonAction" prefHeight="25.0" prefWidth="44.0" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <Text layoutX="13.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext" text="The number of days in a month that are rainy days (avg). This number is the peak of the season and the rani days will gradually get to this rainfall amount from the previous season." wrappingWidth="260.5078203678131">
+                     <font>
+                        <Font name="System Italic" size="10.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="27.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext" text="***Configure rain settings in the options panel.***" wrappingWidth="242.0000033378601">
+                     <font>
+                        <Font name="System Italic" size="10.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="544.0" layoutY="151.0" prefHeight="124.0" prefWidth="457.0" styleClass="panel">
+               <children>
+                  <DatePicker fx:id="datePicker" layoutX="149.0" layoutY="8.0" prefHeight="25.0" prefWidth="132.0" promptText="Select Date" />
+                  <Text layoutX="13.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Season Start Date" wrappingWidth="160.13671875" />
+                  <Text layoutX="139.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext" text="Season 2 start date will determine the end of this season. The year field will be ignored." wrappingWidth="144.70311641693115">
+                     <font>
+                        <Font name="System Italic" size="10.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="22.0" layoutY="151.0" prefHeight="124.0" prefWidth="507.0" styleClass="panel">
+               <children>
+                  <Text layoutX="96.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext" text="(30-100 percent reletive humidity)" wrappingWidth="182.00000822544098">
+                     <font>
+                        <Font name="System Italic" size="10.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="10.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Minimum Humdity" wrappingWidth="144.70311641693115" />
+                  <Text layoutX="10.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Maximum Humidity" wrappingWidth="144.70311641693115" />
+                  <GridPane layoutX="142.0" layoutY="10.0" prefHeight="34.0" prefWidth="132.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="minHDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#minHDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="minHUp" mnemonicParsing="false" onAction="#minHUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <TextField fx:id="minimumHumidity" onAction="#handleSubmitButtonAction" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="142.0" layoutY="52.0" prefHeight="34.0" prefWidth="132.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="maxHDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#maxHDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="maxHUp" mnemonicParsing="false" onAction="#maxHUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <TextField fx:id="maximumHumidity" onAction="#handleSubmitButtonAction" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+            <Pane layoutX="22.0" layoutY="289.0" prefHeight="243.0" prefWidth="507.0" styleClass="panel">
+               <children>
+                  <Pane layoutY="113.0" prefHeight="113.0" prefWidth="342.0">
+                     <children>
+                        <Text layoutX="37.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext" text="Hour (0-23)" textAlignment="RIGHT" wrappingWidth="82.46776700019836" />
+                        <Text layoutX="37.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext" text="Minute (0-59)" textAlignment="RIGHT" wrappingWidth="82.46776700019836" />
+                        <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Daylight End" wrappingWidth="173.5078190267086" />
+                        <GridPane layoutX="141.0" layoutY="32.0" prefHeight="34.0" prefWidth="132.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button fx:id="dayEndHrDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#dayEndHrDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <Button fx:id="dayEndHrUp" mnemonicParsing="false" onAction="#dayEndHrUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <TextField fx:id="dayEndHour" onAction="#handleSubmitButtonAction" prefHeight="25.0" prefWidth="44.0" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Italic" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="141.0" layoutY="74.0" prefHeight="34.0" prefWidth="132.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button fx:id="dayEndMinDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#dayEndMinDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <Button fx:id="dayEndMinUp" mnemonicParsing="false" onAction="#dayEndMinUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <TextField fx:id="dayEndMin" onAction="#handleSubmitButtonAction" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Italic" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="113.0" prefWidth="342.0">
+                     <children>
+                        <Text layoutX="39.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext" text="Hour (0-23)" textAlignment="RIGHT" wrappingWidth="82.46776700019836" />
+                        <Text layoutX="39.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext" text="Minute (0-59)" textAlignment="RIGHT" wrappingWidth="82.4677734375" />
+                        <Text layoutX="9.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Daylight Start" wrappingWidth="173.5078190267086" />
+                        <GridPane layoutX="142.0" layoutY="30.0" prefHeight="34.0" prefWidth="132.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button fx:id="dayStartHrDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#dayStartHrDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <Button fx:id="dayStartHrUp" mnemonicParsing="false" onAction="#dayStartHrUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <TextField fx:id="dayStartHour" onAction="#handleSubmitButtonAction" prefHeight="25.0" prefWidth="44.0" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Italic" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="142.0" layoutY="72.0" prefHeight="34.0" prefWidth="132.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button fx:id="dayStartMinDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#dayStartMinDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <Button fx:id="dayStartMinUp" mnemonicParsing="false" onAction="#dayStartMinUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                              <TextField fx:id="dayStartMin" onAction="#handleSubmitButtonAction" prefHeight="25.0" prefWidth="44.0" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Italic" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutX="22.0" layoutY="14.0" prefHeight="124.0" prefWidth="507.0" styleClass="panel">
+               <children>
+                  <Text layoutX="118.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext" text="(35-100 degrees fahrenheit)" wrappingWidth="160.13672813773155">
+                     <font>
+                        <Font name="System Italic" size="10.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="8.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Minimum Temp" wrappingWidth="144.70311641693115" />
+                  <Text layoutX="8.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Maximum Temp" wrappingWidth="144.70311641693115" />
+                  <GridPane layoutX="143.0" layoutY="10.0" prefHeight="34.0" prefWidth="132.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField fx:id="minimumTemperature" onAction="#handleSubmitButtonAction" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" />
+                        <Button fx:id="minTDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#minTDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="minTUp" mnemonicParsing="false" onAction="#minTUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="143.0" layoutY="52.0" prefHeight="34.0" prefWidth="132.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="maxTDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#maxTDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="maxTUp" mnemonicParsing="false" onAction="#maxTUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <TextField fx:id="maximumTemperature" onAction="#handleSubmitButtonAction" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+         </children></Pane>
+      <Text fx:id="seasonSettingsTitle" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Season Title:" wrappingWidth="190.50781616568565" />
+      <TextField fx:id="seasonNameInput" layoutX="182.0" layoutY="11.0" onAction="#handleSubmitButtonAction" prefHeight="34.0" prefWidth="490.0" />
+   </children>
+</Pane>

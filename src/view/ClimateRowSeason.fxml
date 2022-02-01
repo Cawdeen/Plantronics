@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<GridPane fx:id="seasonRowGrid" prefHeight="35.0" prefWidth="1000.0" styleClass="panel-anchor" stylesheets="@TouchScreen1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ClimateRowSeasonController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <Pane fx:id="seasonRowPane" prefHeight="35.0" prefWidth="670.0" styleClass="panel-anchor">
+         <children>
+            <GridPane fx:id="seasonDetailGrid" prefHeight="35.0" prefWidth="870.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="311.0" minWidth="10.0" prefWidth="134.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="564.0" minWidth="10.0" prefWidth="128.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="564.0" minWidth="10.0" prefWidth="116.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="564.0" minWidth="10.0" prefWidth="96.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="564.0" minWidth="10.0" prefWidth="105.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Text fx:id="seasonName" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Season Name" wrappingWidth="118.13671875" />
+                  <Text fx:id="temp" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Temp" textAlignment="CENTER" wrappingWidth="105.13671875" GridPane.columnIndex="1" />
+                  <Text fx:id="daylight" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Daylight" textAlignment="CENTER" wrappingWidth="104.13671875" GridPane.columnIndex="2" />
+                  <Text fx:id="rainfall" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="..." textAlignment="CENTER" wrappingWidth="82.13671875" GridPane.columnIndex="3" />
+                  <Text fx:id="humidity" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Humidity" textAlignment="CENTER" wrappingWidth="90.13671875" GridPane.columnIndex="4" />
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+   </children>
+</GridPane>

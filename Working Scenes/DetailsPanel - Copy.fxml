@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="720.0" styleClass="panel-anchor" stylesheets="@../src/view/TouchScreen1.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="116.0" prefWidth="350.0">
+         <children>
+            <GridPane layoutX="14.0" layoutY="28.0" prefHeight="69.0" prefWidth="177.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="186.0" minWidth="0.0" prefWidth="34.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Weather Only" wrappingWidth="81.70311641693115" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Schedule Only" wrappingWidth="106.70311641693115" GridPane.rowIndex="1" />
+                  <RadioButton fx:id="radioScheduleOnly" mnemonicParsing="false" onAction="#handleRadioScheduleOnlyAction" prefHeight="17.0" prefWidth="14.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <RadioButton fx:id="radioWeatherOnly" mnemonicParsing="false" onAction="#handleRadioWeatherOnlyAction" prefHeight="17.0" prefWidth="14.0" GridPane.columnIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Weather + Schedule" wrappingWidth="106.70311641693115" GridPane.rowIndex="2" />
+                  <RadioButton fx:id="radioWeatherPlus" mnemonicParsing="false" onAction="#handleRadioWeatherPlusAction" prefHeight="17.0" prefWidth="14.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle" text="Weather System vs Scheduled Events" wrappingWidth="296.70311641693115" />
+            <Text layoutX="191.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left_small" text="Select if the the application will generate dynamic chance based weather, use the scheduling system only, or use both. When both are used." wrappingWidth="119.99999761581421" />
+         </children>
+      </Pane>
+      <Pane layoutX="375.0" layoutY="15.0" prefHeight="377.0" prefWidth="331.0">
+         <children>
+            <Pane layoutX="3.0" layoutY="29.0" prefHeight="344.0" prefWidth="326.0">
+               <children>
+                  <GridPane layoutX="15.0" layoutY="15.0" prefHeight="34.0" prefWidth="281.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="145.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="0.0" prefWidth="46.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.0" minWidth="10.0" prefWidth="39.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="52.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="mistPinNum" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="2" />
+                        <Button fx:id="mistPinDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#MistPinDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="mistPinUp" mnemonicParsing="false" onAction="#MistPinUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Mist" wrappingWidth="97.70311641693115" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="15.0" layoutY="50.0" prefHeight="34.0" prefWidth="281.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="145.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="0.0" prefWidth="46.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.0" minWidth="10.0" prefWidth="39.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="52.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="fogPinNum" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="2" />
+                        <Button fx:id="fogPinDown" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="fogPinUp" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Fog" wrappingWidth="97.70311641693115" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="15.0" layoutY="85.0" prefHeight="34.0" prefWidth="281.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="145.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="0.0" prefWidth="46.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.0" minWidth="10.0" prefWidth="39.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="52.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="ventPinNum" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="2" />
+                        <Button fx:id="ventPinDown" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="ventPinUp" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Ventilation " wrappingWidth="97.70311641693115" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="15.0" layoutY="120.0" prefHeight="34.0" prefWidth="281.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="145.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="0.0" prefWidth="46.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.0" minWidth="10.0" prefWidth="39.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="52.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="coolPinNum" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="2" />
+                        <Button fx:id="coolPinDown" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="coolPinUp" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Cooling" wrappingWidth="97.70311641693115" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="15.0" layoutY="155.0" prefHeight="34.0" prefWidth="281.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="145.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="0.0" prefWidth="46.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.0" minWidth="10.0" prefWidth="39.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="52.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="heatPinNum" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="2" />
+                        <Button fx:id="heatPinDown" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="heatPinUp" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Heating" wrappingWidth="97.70311641693115" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="15.0" layoutY="190.0" prefHeight="34.0" prefWidth="281.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="10.0" prefWidth="145.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="0.0" prefWidth="46.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.0" minWidth="10.0" prefWidth="39.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="52.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="circPinNum" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="2" />
+                        <Button fx:id="circPinDown" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="circPinUp" mnemonicParsing="false" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytext" text="Circulation" wrappingWidth="97.70311641693115" />
+                     </children>
+                  </GridPane>
+                  <Text layoutX="14.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left_small" text="Refer to the Pi4J Pinout Diagram at https://pi4j.com/1.2/pin-numbering-scheme.html" wrappingWidth="300.9999976158142" />
+               </children>
+            </Pane>
+            <Text layoutX="17.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle" text="Pinout Settings" wrappingWidth="296.70311641693115" />
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="125.0" prefHeight="153.0" prefWidth="352.0">
+         <children>
+            <GridPane layoutX="14.0" layoutY="28.0" prefHeight="69.0" prefWidth="177.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="111.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="186.0" minWidth="0.0" prefWidth="66.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Lightning" wrappingWidth="81.70311641693115" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Fog Events" wrappingWidth="106.70311641693115" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Cloud Cover" wrappingWidth="106.70311641693115" GridPane.rowIndex="2" />
+                  <CheckBox fx:id="checkLightning" mnemonicParsing="false" onAction="#checkLightningAction" GridPane.columnIndex="1" />
+                  <CheckBox fx:id="checkFog" mnemonicParsing="false" onAction="#checkFogAction" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="checkClouds" mnemonicParsing="false" onAction="#checkCloudAction" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle" text="Toggle Weather Events" wrappingWidth="296.70311641693115" />
+            <Text layoutX="191.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left_small" text="Select which events are enabled when dynamic weather is generated. Lightning is created via the white and blue LED channels. Fog can be generated during certaiin weather conditions, cloud cover is oftern present adjacent to rain activities." wrappingWidth="119.99999761581421" />
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="241.0" prefHeight="165.0" prefWidth="355.0">
+         <children>
+            <GridPane layoutX="1.0" layoutY="28.0" prefHeight="25.0" prefWidth="175.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="64.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="186.0" minWidth="0.0" prefWidth="31.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="76.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="28.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Fog" textAlignment="RIGHT" wrappingWidth="57.70311641693115" GridPane.columnIndex="2" />
+                  <RadioButton fx:id="radioFogForHumid" mnemonicParsing="false" onAction="#handleRadioFogForHumidAction" prefHeight="17.0" prefWidth="14.0" GridPane.columnIndex="3" />
+                  <RadioButton fx:id="radioMistForHumid" mnemonicParsing="false" onAction="#handleMistForHumidAction" prefHeight="17.0" prefWidth="14.0" GridPane.columnIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Mist" textAlignment="RIGHT" wrappingWidth="48.70311641693115" />
+               </children>
+            </GridPane>
+            <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle" text="Non-Weather Humidity Control" wrappingWidth="210.70311641693115" />
+            <Pane layoutY="66.0" prefHeight="86.0" prefWidth="353.0">
+               <children>
+                  <GridPane layoutX="14.0" layoutY="40.0" prefHeight="34.0" prefWidth="132.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TextField fx:id="hysteresisText" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" />
+                        <Button fx:id="hysteresisDown" contentDisplay="CENTER" mnemonicParsing="false" onAction="#hystNumDownAction" prefHeight="25.0" prefWidth="45.0" text="-" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                        <Button fx:id="hysteresisUp" mnemonicParsing="false" onAction="#hystNumUpAction" prefHeight="25.0" prefWidth="45.0" text="+" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647" />
+                     </children>
+                  </GridPane>
+                  <Text layoutX="14.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="primarytextsmall" text="Harware Duration per Cycle (seconds)" wrappingWidth="186.70311641693115" />
+                  <Text layoutX="216.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tiptext_left_small" text="Used for hysteresis purposes. Prevents constant cycling on and off of misters, fans for humiity correction etc." wrappingWidth="122.99999761581421" />
+                  <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle" text="Hardware Correction Timing" wrappingWidth="210.70311641693115" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
