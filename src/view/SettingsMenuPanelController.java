@@ -12,6 +12,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -67,6 +69,15 @@ public class SettingsMenuPanelController {
                 System.out.println("home panel hidden");
                 homePanelController.shutdown();
             }
+            });
+            
+            //KeyEvent Listener
+            stage.getScene().setOnKeyPressed(new EventHandler<KeyEvent>() {
+                @Override
+                public void handle(KeyEvent event) {
+                    KeyCode code = event.getCode();
+                    modelData.getIoData().getKeyInput().handle(code);
+                }
             });
             
             //get and close the current stage

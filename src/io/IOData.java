@@ -16,13 +16,24 @@ public class IOData {
     private SerialPacket lastGoodPacket;
     private long nanoTimePacketSuccess;
     private Pinout pinout;
+    private KeyInput keyInput;
     
     public IOData(boolean pinoutActive, HardwareSettingsData hs)
     {
         failedSerialAttempts = 0;
-        lastPacket = new SerialPacket(-1,-1,-1,-1,false); //instantiate packets
-        lastGoodPacket = lastPacket;
+        if(pinoutActive == false) //not using pinout
+        {
+            keyInput = new KeyInput();//create a key listener if there is no pinout (Windows mode)
+            lastPacket = new SerialPacket(70,70,80,80,false); //instantiate fake packets
+            lastGoodPacket = lastPacket;
+        }else          //using pinout
+        {
+            lastPacket = new SerialPacket(-1,-1,-1,-1,false); //instantiate real packets
+            lastGoodPacket = lastPacket;
+        }
+        
         pinout = new Pinout(pinoutActive, hs);
+        
     }
     
     public void startHardwareTimer(int seconds)
@@ -47,7 +58,7 @@ public class IOData {
      * @param lastPacket the lastPacket to set
      */
     public void setLastPacket(SerialPacket lastPacket) {
-        if(pinout.pinout)//if we are using pinout (raspberry pi)
+        if(pinout.pinout == true)//if we are using pinout (raspberry pi)
         {
             if(lastPacket != null)
             {
@@ -67,6 +78,17 @@ public class IOData {
                 this.lastPacket = new SerialPacket(-1,-1,-1,-1,false); //instantiate failed packet
                 failedSerialAttempts += 1;
             }
+        }else//not using pinout. We are in Windows mode.
+        {
+            //set false temp and humidity and check KeyListener for inputs
+            lastGoodPacket = this.lastPacket;
+            failedSerialAttempts = 0;
+            nanoTimePacketSuccess = System.nanoTime();
+            float temp = lastGoodPacket.getTempSHT();
+            float humid = lastGoodPacket.getHumiditySHT();
+            temp += getKeyInput().getTemp(); //alter the temp by keyboard input
+            humid += getKeyInput().getHumid();//alter the humidity by keyboard input
+            this.lastPacket = new SerialPacket(temp,temp,humid, humid, false); //instantiate fake packet
         }
     }
 
@@ -91,5 +113,12 @@ public class IOData {
      */
     public Pinout getPinout() {
         return pinout;
+    }
+
+    /**
+     * @return the keyListener
+     */
+    public KeyInput getKeyInput() {
+        return keyInput;
     }
 }

@@ -18,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -26,6 +27,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import static lightfx.LightSettings.DayTimes.NIGHT;
@@ -134,6 +136,7 @@ public class HomePanelController {
     public void setStage(Stage stage)
     {
         this.stage = stage;
+        
     }
     
     public void shutdown()
@@ -194,12 +197,19 @@ public class HomePanelController {
     
     public void updateStatus()
     {
-        //temp
-        tempText.setText(Integer.toString(modelData.getCurrentConditionsData().getCurrentTemp()) + "°");
-        //humidity
-        humidText.setText(Integer.toString(modelData.getCurrentConditionsData().getCurrentHumidity()) + "%");
-        //light
         boolean light = false;
+        boolean heat = false;
+        boolean cooling = false;
+        boolean humidity = false;
+        boolean ventilation = false;
+        
+        
+        //temp text
+        tempText.setText(Integer.toString(modelData.getCurrentConditionsData().getCurrentTemp()) + "°");
+        //humidity text
+        humidText.setText(Integer.toString(modelData.getCurrentConditionsData().getCurrentHumidity()) + "%");
+        //light icon
+        
         if(modelData.getConfigModeData().getConfigMode() != true)
         {
         light = (modelData.getLightData().getIsDay(
@@ -213,12 +223,36 @@ public class HomePanelController {
         else if(modelData.getConfigModeData().getConfigTime() != NIGHT){
             light = true;
         }
+        //heat icon
+       if(modelData.getCurrentConditionsData().getTempControl().getHeating(modelData.getClimateData().getCurrentSeason().getTempRange().getMin(), modelData.getCurrentConditionsData().getCurrentTemp())== true)
+       {
+           heat = true;
+       }else{heat = false;}
+       //cooling icon
+       if(modelData.getCurrentConditionsData().getTempControl().getCooling(modelData.getClimateData().getCurrentSeason().getTempRange().getMax(), modelData.getCurrentConditionsData().getCurrentTemp())== true)
+       {
+           cooling = true;
+       }else{cooling = false;}
+       //humidify icon
+       if(modelData.getCurrentConditionsData().getHumidityControl().getHumidifying(modelData.getClimateData().getCurrentSeason().getHumidRange().getMin(), modelData.getCurrentConditionsData().getCurrentHumidity())== true)
+       {
+           humidity = true;
+       }else{humidity = false;}
+       //Ventilate icon
+       if(modelData.getCurrentConditionsData().getHumidityControl().getVentilating(modelData.getClimateData().getCurrentSeason().getHumidRange().getMax(), modelData.getCurrentConditionsData().getCurrentHumidity())== true)
+       {
+           ventilation = true;
+       }else{ventilation = false;}
         lightImageOn.setVisible(light);
-        lightImageOff.setVisible(!light);
-        //heat
-        //cooling
-        //humidity
-        //ventilation        
+        lightImageOff.setVisible(!light);       
+        heatImageOn.setVisible(heat);
+        heatImageOff.setVisible(!heat);
+        coolImageOn.setVisible(cooling);
+        coolImageOff.setVisible(!cooling);
+        humidImageOn.setVisible(humidity);
+        humidImageOff.setVisible(!humidity);
+        ventImageOn.setVisible(ventilation);
+        ventImageOff.setVisible(!ventilation);
     }
     
     public void updateStatus(boolean light, boolean heat, boolean cool, boolean humidify, boolean ventilate, String temp, ForecastCondition currentCon, LocalTime sunrise, LocalTime sunset)

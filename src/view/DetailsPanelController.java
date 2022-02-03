@@ -22,6 +22,8 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -246,6 +248,15 @@ public class DetailsPanelController {
                 System.out.println("home panel hidden");
                 homePanelController.shutdown();
             }
+            });
+            
+            //KeyEvent Listener
+            stage.getScene().setOnKeyPressed(new EventHandler<KeyEvent>() {
+                @Override
+                public void handle(KeyEvent event) {
+                    KeyCode code = event.getCode();
+                    modelData.getIoData().getKeyInput().handle(code);
+                }
             });
             
             //get and close the current stage

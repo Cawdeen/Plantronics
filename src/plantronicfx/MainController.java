@@ -156,6 +156,9 @@ public class MainController {
             SerialPacket sp = sensorModule.getValue();
             //Throwable problem = sensorModule.getException();
             modelData.getIoData().setLastPacket(sp);
+            //set current conditions to last good packet (needed for Windows mode or when not using pinout)
+            modelData.getCurrentConditionsData().setCurrentTemp((int)modelData.getIoData().getLastGoodPacket().getTempSHT(), (int)modelData.getIoData().getLastGoodPacket().getTempDHT()); //set temp (convert to int)
+            modelData.getCurrentConditionsData().setCurrentHumidity((int)modelData.getIoData().getLastGoodPacket().getHumiditySHT(), (int)modelData.getIoData().getLastGoodPacket().getHumidityDHT()); //set humidity (convert to int)
         });
         executorService.execute(sensorModule);
     }

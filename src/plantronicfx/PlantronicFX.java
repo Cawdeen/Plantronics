@@ -16,6 +16,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -140,6 +142,15 @@ public class PlantronicFX extends Application {
                 //mainController.killTimer();
                 System.out.println("homepanel stage closed");
                 homePanelController.shutdown();
+            }
+        });
+        
+        //KeyEvent Listener
+        stage.getScene().setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                KeyCode code = event.getCode();
+                mainController.getModelData().getIoData().getKeyInput().handle(code);
             }
         });
     }    
