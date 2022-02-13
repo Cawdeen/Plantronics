@@ -56,7 +56,7 @@ public class MainController {
     
     //ClimateReadWriter climateReadWrite;
     
-    boolean pinout = true;
+    boolean pinout = false;
     
     public MainController()
     {        
